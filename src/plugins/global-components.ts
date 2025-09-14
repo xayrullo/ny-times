@@ -1,12 +1,11 @@
 import type { App } from "vue";
 
-const icons = import.meta.glob("../components/icons/**/*.vue", {
-  eager: true,
-});
-
 export default function registerGlobalComponents(app: App) {
-  for (const path in icons) {
-    const component: any = (icons[path] as any).default;
+  const _icons = import.meta.glob("../components/icons/**/*.vue", {
+    eager: true,
+  });
+  for (const path in _icons) {
+    const component: any = (_icons[path] as any).default;
 
     if (!component) continue;
 

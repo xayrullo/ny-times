@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-cheltenham">
     <default-layout />
     <router-view />
   </div>
