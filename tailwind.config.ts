@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        cheltenham: [
+        nyt: [
           "nyt-cheltenham",
           "cheltenham-fallback-georgia",
           "cheltenham-fallback-noto",

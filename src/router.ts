@@ -12,9 +12,16 @@ const routes: Array<RouteRecordRaw> = [
     children: [],
   },
   {
-    path: "/about",
-    name: "about",
-    component: () => import("./views/about.vue"),
+    path: "/news",
+    name: "news",
+    component: () => import("./views/news.vue"),
+    children: [
+      {
+        path: "/news/ocean-vuong-family-brother",
+        name: "ocean-vuong-family-brother",
+        component: () => import("./views/news/ocean-vuong.vue"),
+      },
+    ],
   },
   {
     path: "/404",
@@ -23,10 +30,6 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       pageTitle: "Error 404",
     },
-  },
-  {
-    path: "/:pathMatch(.*)*",
-    redirect: "/404",
   },
 ];
 
