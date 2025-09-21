@@ -1,5 +1,6 @@
 <template>
-  <div class="absolute sections top-0">
+  <div class="absolute sections top-0 w-full">
+    <!-- TOP SECTION -->
     <section class="top-section h-full text-white absolute inset-0">
       <div class="relative">
         <div class="h-full min-h-[100vh] overflow-hidden">
@@ -12,7 +13,6 @@
         <div class="text-wrapper absolute -top-[60px] left-[5%] h-[100vh]">
           <div
             class="top-first-text absolute inset-0 flex items-end justify-start w-[650px] text-4xl font-[100] tracking-[.1px] leading-[1.21em]"
-            style="-webkit-font-smoothing: antialiased"
           >
             <div>
               <p>Three weeks after my mother died,</p>
@@ -41,35 +41,37 @@
       </div>
     </section>
 
+    <!-- SECOND SECTION -->
     <section
-      class="relative inset-0 second-section h-screen opacity-0 flex items-center bg-white z-10"
+      class="absolute inset-0 second-section h-screen opacity-0 flex items-center bg-white z-10"
     >
       <div class="relative flex items-center">
         <div class="second-section-text w-1/3 ml-[5%] mr-auto opacity-0">
+          <!-- buttons -->
           <div class="flex items-center gap-2 mt-5 mb-4 text-[12px]">
             <button
               class="cursor-pointer rounded-full flex items-center gap-1 border border-black py-[6px] px-[10px]"
             >
-              <icon-gift size="19" color="#121212" />
-              Share full article
+              <icon-gift size="19" color="#121212" /> Share full article
             </button>
             <button
-              class="cursor-pointer rounded-full flex items-center justify-center gap-1 border border-black w-[34px] h-[34px]"
+              class="cursor-pointer rounded-full flex items-center justify-center border border-black w-[34px] h-[34px]"
             >
               <icon-share size="19" color="#121212" />
             </button>
             <button
-              class="cursor-pointer rounded-full flex items-center justify-center gap-1 border border-black w-[34px] h-[34px]"
+              class="cursor-pointer rounded-full flex items-center justify-center border border-black w-[34px] h-[34px]"
             >
               <icon-mark size="19" color="#121212" />
             </button>
             <button
               class="cursor-pointer rounded-full flex items-center gap-1 border border-black py-[6px] px-[10px]"
             >
-              <icon-sms size="19" color="#121212" />
-              159
+              <icon-sms size="19" color="#121212" /> 159
             </button>
           </div>
+
+          <!-- text -->
           <div class="text-[23px] leading-[28.5px] text-[#3c3c3c] font-light">
             <p class="mb-[25px]">
               <span class="uppercase">Hours after my</span> mother took her last
@@ -99,6 +101,8 @@
             </p>
           </div>
         </div>
+
+        <!-- image -->
         <div
           class="second-section-image w-2/3 py-[5%] px-[5%] h-[80vh] flex items-center justify-center"
         >
@@ -109,37 +113,61 @@
         </div>
       </div>
     </section>
+
+    <!-- THIRD SECTION -->
     <section
-      class="relative third-section h-screen flex items-center bg-white z-10"
+      class="third-section h-screen flex items-center bg-white z-10 opacity-0 inset-0"
     >
-      <div class="w-1/3 mr-[5%] ml-auto opacity-0 third-text">
-        <div class="text-[23px] leading-[28.5px] text-[#3c3c3c] font-light">
-          <p class="mb-[25px]">
-            Our mother’s body, according to our Buddhist custom, was to stay in
-            place until dawn, undisturbed. My relatives took turns holding vigil
-            beside the body upstairs. Then it was my turn, and then my
-            brother’s, and we went back upstairs and circled my mother’s bed as
-            the fighters circled each other before the empty couch in the
-            basement.
-          </p>
-          <p>
-            After living with my mother for more than two decades — his whole
-            life — my brother would soon move in with me.
-          </p>
+      <div class="relative">
+        <div class="flex items-center">
+          <div
+            class="third-section-image w-2/3 py-[5%] px-[5%] h-[80vh] flex items-center justify-center"
+          >
+            <img
+              src="/images/news/ocean-vuong/third-section.png"
+              class="max-h-full max-w-full object-contain"
+            />
+          </div>
+          <div class="third-section-text w-1/3 ml-[5%] mr-auto opacity-0">
+            <div class="text-[23px] leading-[28.5px] text-[#3c3c3c] font-light">
+              <p class="mb-[25px]">
+                Our mother’s body, according to our Buddhist custom, was to stay
+                in place until dawn, undisturbed. My relatives took turns
+                holding vigil beside the body upstairs. Then it was my turn, and
+                then my brother’s, and we went back upstairs and circled my
+                mother’s bed as the fighters circled each other before the empty
+                couch in the basement.
+              </p>
+              <p>
+                After living with my mother for more than two decades — his
+                whole life — my brother would soon move in with me.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="third-section-night-house fixed opacity-0 inset-0 w-full h-screen"
+        >
+          <img
+            src="/images/news/ocean-vuong/night-house.png"
+            class="w-full h-full object-cover"
+          />
         </div>
       </div>
-      <div class="absolute left-0 ml-[5%] third-img opacity-0">
-        <img
-          src="/images/news/ocean-vuong/third-section.png"
-          class="w-[1100px]"
-        />
-      </div>
     </section>
+
+    <!-- FOURTH SECTION -->
+    <!-- <section class="fourth-section relative h-screen opacity-0 inset-0 w-full">
+      <img
+        src="/images/news/ocean-vuong/night-house.png"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    </section> -->
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, provide } from "vue";
+import { onMounted } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useHeaderColor } from "@/composables/useHeaderColor";
@@ -149,6 +177,28 @@ gsap.registerPlugin(ScrollTrigger);
 useHeaderColor().setColor("#FFFFFF");
 
 onMounted(() => {
+  const fadeSection = (section: string, text: string, image: string) => {
+    return gsap.fromTo(
+      text,
+      { y: "100vh", opacity: 0 },
+      {
+        y: "-110%",
+        opacity: 1,
+        ease: "power2.out",
+        duration: 2,
+        onUpdate: function () {
+          const progress = this.progress();
+          if (progress === 1) gsap.set(section, { opacity: 0 });
+          if (progress > 0.45) {
+            gsap.set(image, { opacity: 1 - progress });
+          } else if (progress > 0.3) {
+            gsap.set(image, { opacity: 1 });
+          }
+        },
+      }
+    );
+  };
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".sections",
@@ -167,27 +217,61 @@ onMounted(() => {
       duration: 1,
       onUpdate: function () {
         const progress = this.progress();
-
         const secondOpacity =
           progress < 0.5 ? 0 : gsap.utils.mapRange(0.5, 1, 0, 1, progress);
 
         gsap.set(".second-section", { opacity: secondOpacity });
+        gsap.set(".second-section-image", { opacity: secondOpacity });
       },
     })
+    .add(
+      fadeSection(
+        ".second-section",
+        ".second-section-text",
+        ".second-section-image"
+      ),
+      ">-0.1"
+    )
+    .to(".third-section", {
+      opacity: 1,
+      duration: 1,
+    })
     .fromTo(
-      ".second-section-text",
-      { y: "100vh", opacity: 0 }, // boshlang'ich: ekranning eng pasti
+      ".third-section-text",
+      { y: "100vh", opacity: 0 },
       {
         y: "-110%",
         opacity: 1,
-        duration: 1,
         ease: "power2.out",
+        duration: 2,
         onUpdate: function () {
           const progress = this.progress();
-          console.log("Progress", this);
+
+          if (progress === 1) {
+            gsap.to(".third-section-night-house", {
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out",
+            });
+          }
+
+          if (progress === 0) {
+            gsap.to(".third-section-night-house", {
+              opacity: 0,
+              duration: 2,
+              ease: "power2.out",
+            });
+          }
+
+          if (progress > 0.45) {
+            gsap.set(".third-section-image", { opacity: 1 - progress });
+          } else if (progress > 0.3) {
+            gsap.set(".third-section-image", { opacity: 1 });
+          } else {
+            gsap.set(".third-section-image", { opacity: 1 });
+          }
         },
-      },
-      ">-0.1"
+      }
     );
 });
 </script>
