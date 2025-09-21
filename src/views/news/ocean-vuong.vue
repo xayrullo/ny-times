@@ -172,22 +172,22 @@ onMounted(() => {
           progress < 0.5 ? 0 : gsap.utils.mapRange(0.5, 1, 0, 1, progress);
 
         gsap.set(".second-section", { opacity: secondOpacity });
-
-        if (secondOpacity >= 0.85) {
-          const textProgress = gsap.utils.mapRange(
-            0.85,
-            1,
-            0,
-            1,
-            secondOpacity
-          );
-
-          gsap.set(".second-section-text", {
-            opacity: textProgress,
-            y: gsap.utils.mapRange(0, 1, window.innerHeight, 0, textProgress),
-          });
-        }
       },
-    });
+    })
+    .fromTo(
+      ".second-section-text",
+      { y: "100vh", opacity: 0 }, // boshlang'ich: ekranning eng pasti
+      {
+        y: "-110%",
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        onUpdate: function () {
+          const progress = this.progress();
+          console.log("Progress", this);
+        },
+      },
+      ">-0.1"
+    );
 });
 </script>
